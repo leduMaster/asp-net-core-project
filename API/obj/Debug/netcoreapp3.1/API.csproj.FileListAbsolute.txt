@@ -127,8 +127,6 @@ C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\FluentV
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
-C:\Users\Dule\source\repos\DNElectronicsBlog\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
-C:\Users\Dule\source\repos\DNElectronicsBlog\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
@@ -136,4 +134,6 @@ C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Microso
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Dule\source\repos\DNElectronicsBlog\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
 C:\Users\Dule\source\repos\DNElectronicsBlog\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Dule\source\repos\DNElectronicsBlog\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache

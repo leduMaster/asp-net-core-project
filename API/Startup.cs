@@ -42,7 +42,7 @@ namespace API
             Configuration.Bind(appSettings);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("V1.15", new OpenApiInfo { Title = "API", Version = "V1.15" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
@@ -53,7 +53,6 @@ namespace API
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer"
                 });
-
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement()
                 {
                     {
@@ -67,7 +66,6 @@ namespace API
                               Scheme = "oauth2",
                               Name = "Bearer",
                               In = ParameterLocation.Header,
-
                             },
                             new List<string>()
                           }
@@ -85,7 +83,7 @@ namespace API
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1.15");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
                 c.RoutePrefix = string.Empty;
             });
             if (env.IsDevelopment())
