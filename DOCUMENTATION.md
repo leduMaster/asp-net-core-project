@@ -1,5 +1,7 @@
 # asp-net-core-project
 ASP.NET Core Blog project for school
+Dusan Nikolic 1/15
+
 Tema projekta je blog. 
 
 Postoje Postovi koji imaju tagove, komentare, i ocene.
