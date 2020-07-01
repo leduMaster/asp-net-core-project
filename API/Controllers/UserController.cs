@@ -19,11 +19,13 @@ namespace API.Controllers
     public class UserController : ControllerBase
     {
         private readonly UseCaseExecutor executor;
-        public UserController(UseCaseExecutor executor)
+        private readonly IApplicationActor actor;
+
+        public UserController(UseCaseExecutor executor, IApplicationActor actor)
         {
             this.executor = executor;
+            this.actor = actor;
         }
-
         // GET: api/<UserController>
         [HttpGet]
         public IActionResult Get([FromQuery] UserSearch query, [FromServices] IGetUsersCommand command) => Ok(executor.ExecuteQuery(command, query));

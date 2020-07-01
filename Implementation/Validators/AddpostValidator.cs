@@ -12,7 +12,9 @@ namespace Implementation.Validators
     {
         public AddpostValidator(BlogContext context)
         {
-            RuleFor(u => u.Name).NotEmpty().MinimumLength(3);
+            RuleFor(u => u.Name).NotEmpty().MinimumLength(3); RuleFor(x => x.CreatedAt).NotEmpty().
+                 Equal(DateTime.Now)
+                 .WithMessage("Comment date must be now.");
             RuleFor(u => u.Description).NotEmpty().MinimumLength(13).MaximumLength(210);
         }
     }

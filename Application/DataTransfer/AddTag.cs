@@ -12,5 +12,6 @@ namespace Application.DataTransfer
         [Required]
         public bool IsDeleted { get; set; }
         public int? Id { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

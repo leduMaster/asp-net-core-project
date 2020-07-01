@@ -18,10 +18,12 @@ namespace API.Controllers
     public class PictureController : ControllerBase
     {
         private readonly UseCaseExecutor executor;
+        private readonly IApplicationActor actor;
 
-        public PictureController(UseCaseExecutor executor)
+        public PictureController(UseCaseExecutor executor, IApplicationActor actor)
         {
             this.executor = executor;
+            this.actor = actor;
         }
 
         // GET: api/<PictureController>

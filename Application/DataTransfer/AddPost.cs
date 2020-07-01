@@ -18,5 +18,6 @@ namespace Application.DataTransfer
         //[MinLength(13, ErrorMessage = "Picture url must have at least 3 characters.")]        
         public int UserId { get; set; }
         public int? Id { get; set;}
+        public DateTime CreatedAt { get; set; }
     }
 }

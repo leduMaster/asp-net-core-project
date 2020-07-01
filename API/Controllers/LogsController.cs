@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Application;
 using Application.Commands;
-using Application.DataTransfer;
+using Application.Searches;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -14,21 +13,25 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UploadController : ControllerBase
+    public class LogsController : ControllerBase
     {
-        private readonly UseCaseExecutor _executor;
+        private readonly UseCaseExecutor executor;
         private readonly IApplicationActor actor;
 
-        public UploadController(UseCaseExecutor executor, IApplicationActor actor)
+        public LogsController(UseCaseExecutor executor, IApplicationActor actor)
         {
-            this._executor = executor;
+            this.executor = executor;
             this.actor = actor;
         }
-        // POST api/<UploadController>
-        [HttpPost]
-        public void Post([FromForm] UploadDto dto, [FromServices] IUploadFileCommand command)
+
+
+
+        // GET: api/<LogsController>
+        [HttpGet]
+        public IActionResult Get([FromQuery] LogSearch search, [FromServices] IGetLogsCommand query)
         {
-            _executor.ExecuteCommand(command, dto);
+            return Ok(executor.ExecuteQuery(query, search));
         }
+
     }
 }

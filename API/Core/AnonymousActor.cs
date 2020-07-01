@@ -12,6 +12,6 @@ namespace API.Core
 
         public string Identity => "Anonymus";
 
-        public IEnumerable<int> AllowedUseCases => new List<int> { 16,17,18,19,20,21,22,23,24,25}; //getOne i getAll
+        public IEnumerable<int> AllowedUseCases => new List<int> { 16,17,18,19,20,21,22,23,24,25,33}; //getOne i getAll
     }
 }

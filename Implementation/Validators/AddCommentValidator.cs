@@ -17,7 +17,10 @@ namespace Implementation.Validators
         {
             this._context = context;
             RuleFor(x => x.Text).NotEmpty(); RuleFor(x => x.IsDeleted).NotEmpty();
-           // RuleFor(x => x.IsDeleted).Must(CommentNotDeleted);
+            RuleFor(x=>x.CreatedAt).NotEmpty().
+                Equal(DateTime.Now)
+                .WithMessage("Comment date must be now.");
+             //RuleFor(x => x.IsDeleted).Must(CommentNotDeleted);
         }
         private bool CommentNotDeleted(int Id)
         {

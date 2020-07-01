@@ -18,5 +18,6 @@ namespace Application.DataTransfer
         public string Alt { get; set; }
         [Required]
         public bool IsDeleted { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

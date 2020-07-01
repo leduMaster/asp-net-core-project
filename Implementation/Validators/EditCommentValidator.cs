@@ -17,6 +17,7 @@ namespace Implementation.Validators
             RuleFor(x => x.Text).NotEmpty(); RuleFor(x => x.IsDeleted).NotEmpty();
             // RuleFor(x => x.IsDeleted).Must(CommentNotDeleted);
         }
+                
         private bool CommentNotDeleted(int Id)
         {
             var d = _context.Comments.Find(Id);

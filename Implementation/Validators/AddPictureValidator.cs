@@ -12,7 +12,10 @@ namespace Implementation.Validators
     {
         public AddPictureValidator(BlogContext context)
         {
-            RuleFor(u => u.Src).NotEmpty().MinimumLength(5);
+            RuleFor(u => u.Src).NotEmpty().MinimumLength(5); 
+            RuleFor(x => x.CreatedAt).NotEmpty().
+                 Equal(DateTime.Now)
+                 .WithMessage("Comment date must be now.");
             RuleFor(u => u.Alt).NotEmpty().MinimumLength(3).MaximumLength(10).WithMessage("Mora biti maksimum 10");
         }
     }

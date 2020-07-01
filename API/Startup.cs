@@ -37,7 +37,9 @@ namespace API
             services.AddHttpContextAccessor();
             services.AddTransient<BlogContext>();
             services.AddTransient<JWTManager>();
-
+            services.AddJwt();
+            var appSettings = new AppSettings();
+            Configuration.Bind(appSettings);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("V1.15", new OpenApiInfo { Title = "API", Version = "V1.15" });
@@ -90,9 +92,16 @@ namespace API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(x =>
+            {
+                x.AllowAnyOrigin();
+                x.AllowAnyMethod();
+                x.AllowAnyHeader();
+            });
             app.UseRouting();
-
+            app.UseStaticFiles();
+            app.UseMiddleware<GlobalExceptionHandler>();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

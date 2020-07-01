@@ -14,7 +14,10 @@ namespace Implementation.Validators
     {
         public AddUserValidator(BlogContext context)
         {
-            RuleFor(u => u.FirstName).NotEmpty();
+            RuleFor(u => u.FirstName).NotEmpty(); 
+            RuleFor(x => x.CreatedAt).NotEmpty().
+                 Equal(DateTime.Now)
+                 .WithMessage("Username date must be now.");
             RuleFor(u => u.LastName).NotEmpty(); 
             RuleFor(x => x.Email)
                 .NotEmpty()
@@ -23,7 +26,7 @@ namespace Implementation.Validators
                 .NotEmpty()
                 .MinimumLength(3)
                 .Must(x => !context.Users.Any(user => user.UserName == x))
-                .WithMessage("Username allready exists.");
+                .WithMessage(user => $"Username taken. {user.UserName}");
             RuleFor(u => u.Password)
                 .NotEmpty()
                 .MinimumLength(6);

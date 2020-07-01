@@ -2,7 +2,7 @@
 using Application;
 using Application.Commands;
 using Application.Email;
-using Application.Logger;
+using Implementation.Logger;
 using EfDataAccess;
 using Implementation.Commands;
 using Implementation.Email;

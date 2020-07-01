@@ -18,10 +18,12 @@ namespace API.Controllers
     public class CommentController : ControllerBase
     {
         private readonly UseCaseExecutor executor;
+        private readonly IApplicationActor actor;
 
-        public CommentController(UseCaseExecutor executor)
+        public CommentController(UseCaseExecutor executor, IApplicationActor actor)
         {
             this.executor = executor;
+            this.actor = actor;
         }
 
 

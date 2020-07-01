@@ -18,5 +18,8 @@ namespace Application.DataTransfer
         public int PostId { get; set; }
         [Required]
         public int Id { get; set; }
+        [Required]
+        public DateTime CreatedAt { get; set; }
+        
     }
 }

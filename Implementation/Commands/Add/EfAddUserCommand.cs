@@ -8,16 +8,19 @@ using System.Linq;
 using System.Text;
 using Implementation.Validators;
 using FluentValidation;
+using Application.Email;
 
 namespace Implementation.Commands
 {
     public class EfAddUserCommand : EfBaseCommand, ICreateUserCommand
     {
         private readonly AddUserValidator _validator;
+        private readonly IEmailSender _sender;
 
-        public EfAddUserCommand(BlogContext context, AddUserValidator validator) : base(context)
+        public EfAddUserCommand(BlogContext context, AddUserValidator validator, IEmailSender sender) : base(context)
         {
          _validator = validator;
+         _sender = sender;
         }
 
 
@@ -42,7 +45,13 @@ namespace Implementation.Commands
 
             try
             {
-                Context.SaveChanges();
+                Context.SaveChanges(); 
+                _sender.Send(new SendEmailDto
+                {
+                    Content = "<h1>Uspesno ste dodali korisnika</h1>",
+                    SendTo = request.Email,
+                    Subject = "Registration confirmation!!!"
+                });
             }
             catch (Exception)
             {

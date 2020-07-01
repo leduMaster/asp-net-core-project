@@ -17,7 +17,7 @@ namespace Implementation.Validators
             RuleFor(x => x.Email).NotEmpty().EmailAddress();
             RuleFor(x => x.UserName).NotEmpty().MinimumLength(3)
                 .Must(x => !context.Users.Any(user => user.UserName == x))
-                .WithMessage("Username allready exists.");
+                .WithMessage("Username Taken.");
             RuleFor(u => u.Password).NotEmpty().MinimumLength(6);
         }
     }

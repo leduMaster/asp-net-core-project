@@ -18,13 +18,14 @@ namespace API.Controllers
     public class PostController : ControllerBase
     {
 
-        
-        private readonly UseCaseExecutor executor;
 
-        public PostController(UseCaseExecutor executor)
+        private readonly UseCaseExecutor executor;
+        private readonly IApplicationActor actor;
+
+        public PostController(UseCaseExecutor executor, IApplicationActor actor)
         {
-           
             this.executor = executor;
+            this.actor = actor;
         }
         // GET: api/<PostController>
         [HttpGet]
