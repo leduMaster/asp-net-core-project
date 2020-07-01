@@ -31,8 +31,8 @@ namespace API.Controllers
         public IActionResult Get([FromQuery] PostSearch search, [FromServices] IGetPostsCommand query) => Ok(executor.ExecuteQuery(query, search));
 
         // GET api/<PostController>/5
-        [HttpGet("{id}", Name = "Get")]
-        public IActionResult Get([FromServices] IGetPostCommand query, int id)
+        [HttpGet("{id}")]
+        public IActionResult Get(int id, [FromServices] IGetPostCommand query )
         {
             try
             {

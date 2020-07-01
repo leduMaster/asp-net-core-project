@@ -80,6 +80,7 @@ namespace API.Core
             services.AddTransient<EditCommentValidator>();
 
         }
+
         public static void AddApplicationActor(this IServiceCollection services)
         {
             services.AddTransient<IApplicationActor>(x =>

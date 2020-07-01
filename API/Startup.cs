@@ -33,7 +33,11 @@ namespace API
         {
             services.AddControllers(); 
             services.AddUsesCases();
+            services.AddApplicationActor();
+            services.AddHttpContextAccessor();
             services.AddTransient<BlogContext>();
+            services.AddTransient<JWTManager>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("V1.15", new OpenApiInfo { Title = "API", Version = "V1.15" });

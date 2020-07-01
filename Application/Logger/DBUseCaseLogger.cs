@@ -24,7 +24,7 @@ namespace Application.Logger
                 Date = DateTime.Now,
                 UseCaseName = useCase.Name
             });
-            context.SaveChanges();
+           // context.SaveChanges();
         }
     }
 }
